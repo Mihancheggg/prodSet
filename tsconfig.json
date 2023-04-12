@@ -4,7 +4,7 @@
     "noImplicitAny": true,//не позволяет использовать переменные без явного указания типа
     "module": "ESNext",//способы сборки модулей
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "baseUrl": ".",
     "moduleResolution": "node",
