@@ -11,7 +11,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         mode: mode,
         entry: paths.entry,
         module: {
-            rules: buildLoaders() // правила для обработки не-js файлов
+            rules: buildLoaders(options) // правила для обработки не-js файлов
         },
         resolve: buildResolvers(),
         output: {
