@@ -7,6 +7,9 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "moduleResolution": "node",
     "esModuleInterop": true, //позволяет работать с пакетами, кот исп common js как с обычными
     "allowSyntheticDefaultImports": true //позволяет импорты без *

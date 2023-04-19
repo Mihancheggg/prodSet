@@ -13,7 +13,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             rules: buildLoaders(options) // правила для обработки не-js файлов
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         output: {
             filename: '[name].[contenthash].js',//динамическое имя, доп индентификатор
             path: paths.build,
