@@ -19,7 +19,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             path: paths.build,
             clean: true //очищать лишние файлы билда
         },
-        plugins: buildPlugins(paths),
+        plugins: buildPlugins(options),
         devtool: isDev ? 'inline-source-map' : undefined, //показывает, в каком файле ошибка
         devServer: isDev ? buildDevServer(options) : undefined
     }
