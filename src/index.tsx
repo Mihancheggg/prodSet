@@ -10,7 +10,7 @@ import 'shared/config/i18n/i18n';
 render(<div>
     <BrowserRouter>
         <ThemeProvider>
-            <App/>
+            <App />
         </ThemeProvider>
     </BrowserRouter>
-</div>, document.getElementById('root'))
+</div>, document.getElementById('root'));

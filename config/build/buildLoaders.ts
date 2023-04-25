@@ -6,7 +6,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const svgLoader = {
         test: /\.svg$/i,
         use: ['@svgr/webpack'],
-    }
+    };
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
@@ -15,7 +15,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
                 loader: 'file-loader',
             },
         ],
-    }
+    };
 
     const babelLoader = {
         test: /\.(js|jsx|ts|tsx)$/,
@@ -24,50 +24,50 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                'plugins': [
+                plugins: [
                     ['i18next-extract',
                         {
                             locales: ['ru', 'en'],
-                            keyAsDefaultValue: true
+                            keyAsDefaultValue: true,
                         }],
 
-                ]
-            }
-        }
-    }
+                ],
+            },
+        },
+    };
 
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-    }
+    };
 
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
             options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            //'style-loader',//creates style nodes from JS strings
+            // 'style-loader',//creates style nodes from JS strings
             {
-                loader: 'css-loader',//translates css into CommonJS
+                loader: 'css-loader', // translates css into CommonJS
                 options: {
                     modules: {
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
                         localIdentName: options.isDev
                             ? '[path][name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:8]'
+                            : '[hash:base64:8]',
                     },
-                }
+                },
             },
 
-            'sass-loader'//compiles sass to css
+            'sass-loader', // compiles sass to css
         ],
-    }
+    };
 
     return [ // правила для обработки не-js файлов
         fileLoader,
         svgLoader,
         babelLoader,
-        typescriptLoader, //Если не используем TS, нужен babel-loader
-        cssLoader
-    ]
+        typescriptLoader, // Если не используем TS, нужен babel-loader
+        cssLoader,
+    ];
 }

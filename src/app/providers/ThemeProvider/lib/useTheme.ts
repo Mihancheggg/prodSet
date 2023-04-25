@@ -6,14 +6,14 @@ interface IUseThemeResult{
     theme: Theme
 }
 
-export function useTheme(): IUseThemeResult{
-    const {theme, setTheme} = useContext(ThemeContext)
+export function useTheme(): IUseThemeResult {
+    const { theme, setTheme } = useContext(ThemeContext);
 
     const toggleTheme = () => {
-        const newTheme = theme === Theme.NORMAL ? Theme.DARK : Theme.NORMAL
-        setTheme(newTheme)
-        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
-    }
+        const newTheme = theme === Theme.NORMAL ? Theme.DARK : Theme.NORMAL;
+        setTheme(newTheme);
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+    };
 
-    return {theme, toggleTheme}
+    return { theme, toggleTheme };
 }
