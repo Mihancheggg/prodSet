@@ -1,5 +1,4 @@
-import React, { ErrorInfo, ReactNode } from 'react';
-import { Button } from 'shared/ui/Button/Button';
+import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from 'widgets/PageError/ui/PageError';
 
 interface IErrorBoundaryProps {
@@ -33,7 +32,9 @@ export class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBo
         if (hasError) {
             // You can render any custom fallback UI
             return (
-                <PageError />
+                <Suspense fallback="">
+                    <PageError />
+                </Suspense>
             );
         }
 
