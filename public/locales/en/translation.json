@@ -3,5 +3,6 @@
   "Язык": "Language",
   "Страница не найдена": "Page not found",
   "Произошла непредвиденная ошибка": "Unexpected error",
-  "Обновить страницу": "Update page"
+  "Обновить страницу": "Update page",
+  "Выбросить ошибку": "Throw error"
 }

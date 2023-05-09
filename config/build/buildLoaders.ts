@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildCssLoaders } from './loaders/buildCssLoaders';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const svgLoader = {
@@ -42,26 +42,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    const cssLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            // 'style-loader',//creates style nodes from JS strings
-            {
-                loader: 'css-loader', // translates css into CommonJS
-                options: {
-                    modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                        localIdentName: options.isDev
-                            ? '[path][name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:8]',
-                    },
-                },
-            },
-
-            'sass-loader', // compiles sass to css
-        ],
-    };
+    const cssLoader = buildCssLoaders(options.isDev);
 
     return [ // правила для обработки не-js файлов
         fileLoader,

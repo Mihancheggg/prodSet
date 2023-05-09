@@ -8,7 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
-    ],
+        'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -17,16 +17,14 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: [
-        'react',
-        '@typescript-eslint',
-        'i18next',
-    ],
+    plugins: ['react', '@typescript-eslint', 'i18next'],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+        'react/jsx-filename-extension': [2, {
+            extensions: ['.js', '.jsx', '.tsx'],
+        }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -40,11 +38,14 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-closing-tag-location': 'off',
-        'i18next/no-literal-string': [
-            'error',
-            { markupOnly: true, ignoreAttribute: ['data-testid'] },
-        ],
-        'max-len': ['error', { code: 100, ignoreComments: true }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: ['data-testid', 'to'],
+        }],
+        'max-len': ['error', {
+            code: 100,
+            ignoreComments: true,
+        }],
     },
     globals: {
         __IS_DEV__: true,
