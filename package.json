@@ -16,7 +16,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "loki test",
     "test:ui:ok": "loki test approve",
-    "test:ui:ci": "loki --requiireReference --reactUrl file:./storybook-static",
+    "test:ui:ci": "loki --requireReference update --reactUrl file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -90,9 +90,7 @@
       "chrome.laptop": {
         "target": "chrome.app",
         "width": 1366,
-        "height": 768,
-        "deviceScaleFactor": 1,
-        "mobile": false
+        "height": 768
       },
       "chrome.iphone7": {
         "target": "chrome.app",
