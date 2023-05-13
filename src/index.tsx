@@ -10,10 +10,10 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 render(<div>
     <BrowserRouter>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </ErrorBoundary>
+        {/* <ErrorBoundary> */}
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+        {/* </ErrorBoundary> */}
     </BrowserRouter>
 </div>, document.getElementById('root'));
