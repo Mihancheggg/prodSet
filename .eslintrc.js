@@ -7,7 +7,7 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'airbnb',
-        'plugin:i18next/recommended'
+        'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -46,6 +46,7 @@ module.exports = {
             code: 100,
             ignoreComments: true,
         }],
+        'no-param-reassign': 'warn',
     },
     globals: {
         __IS_DEV__: true,

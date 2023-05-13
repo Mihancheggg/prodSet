@@ -15,7 +15,7 @@ const preview: Preview = {
     decorators: [
         (Story) => (
             <BrowserRouter>
-                <div className={`app normal`}>
+                <div className="app normal">
                     <Story />
                 </div>
             </BrowserRouter>

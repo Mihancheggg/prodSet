@@ -8,8 +8,8 @@ const meta: Meta<typeof AppLink> = {
     title: 'shared/AppLink',
     component: AppLink,
     args: {
-        to: '/'
-    }
+        to: '/',
+    },
 };
 
 export default meta;
@@ -18,31 +18,31 @@ type Story = StoryObj<typeof AppLink>;
 export const Primary: Story = {
     args: {
         children: 'Test',
-        theme: AppLinkTheme.PRIMARY
+        theme: AppLinkTheme.PRIMARY,
     },
 };
 
 export const Secondary: Story = {
     args: {
         children: 'Test',
-        theme: AppLinkTheme.SECONDARY
+        theme: AppLinkTheme.SECONDARY,
     },
 };
 
 export const PrimaryDark: Story = {
     args: {
         children: 'Test',
-        theme: AppLinkTheme.PRIMARY
+        theme: AppLinkTheme.PRIMARY,
     },
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SecondaryDark: Story = {
     args: {
         children: 'Test',
-        theme: AppLinkTheme.SECONDARY
+        theme: AppLinkTheme.SECONDARY,
     },
 };
 
-SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)]
+SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];

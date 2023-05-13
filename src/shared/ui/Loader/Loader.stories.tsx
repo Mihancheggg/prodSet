@@ -8,7 +8,7 @@ const meta: Meta<typeof Loader> = {
     title: 'shared/Loader',
     component: Loader,
     args: {
-    }
+    },
 };
 
 export default meta;
@@ -22,4 +22,4 @@ export const Dark: Story = {
     args: {},
 };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
