@@ -21,13 +21,19 @@ jobs:
         run: yarn
       - name: build production project
         run: yarn build:prod
+        if: always()
       - name: typescript linting
         run: yarn lint:ts
+        if: always()
       - name: css linting
         run: yarn lint:scss
+        if: always()
       - name: unit testing
         run: yarn test:unit
+        if: always()
       - name: build storybook
         run: yarn storybook:build
+        if: always()
       - name: screenshot testing
         run: yarn test:ui:ci
+        if: always()
